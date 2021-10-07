@@ -1,0 +1,33 @@
+#sdk-container .integry-container__flow-card  {
+  background: white;
+  border: none;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+#sdk-container .integry-container__flow-card:hover  {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+}
+
+#sdk-container .integry-container__search {
+  background: white;
+  border: none;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+#sdk-container .integry-container__search-count {
+  display: none;
+}
+
+#sdk-container .integry-container__tabbed-nav__tab:not(:last-child) {
+  margin-right: 10px;
+}
+
+#sdk-container .integry-container__tabbed-nav__tab:hover {
+  border-color: #016AFF;
+  border-bottom-width: 3px;
+}
+
+#sdk-container .integry-container__tabbed-nav__tab--active {
+  border-color: #016AFF;
+  border-bottom-width: 3px;
+}

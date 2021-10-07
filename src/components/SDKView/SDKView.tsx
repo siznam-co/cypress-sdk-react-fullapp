@@ -3,6 +3,7 @@ import fetch from "unfetch";
 import { useAuth0 } from "@auth0/auth0-react";
 import { IntegryJS } from "@integry/sdk";
 
+import "./styles.css";
 
 export default function SDKView(): ReactElement {
   const { getAccessTokenSilently } = useAuth0();
@@ -31,6 +32,10 @@ export default function SDKView(): ReactElement {
         hash,
         userId,
         deploymentId,
+        userConfig: {
+          availableFlowsLabel: "Available Flows",
+          myFlowsLabel: "My Integrations",
+        },
       }).init({
         containerId: "sdk-container",
         renderMode: IntegryJS.RenderModes.MODAL,
