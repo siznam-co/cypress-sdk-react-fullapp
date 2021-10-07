@@ -1,26 +1,29 @@
 import { Fragment, useState } from "react";
+import { Switch, Route, Link } from "react-router-dom";
 import { Dialog, Menu, Transition } from "@headlessui/react";
 import {
   UserIcon,
   CalendarIcon,
-  ChartBarIcon,
   FolderIcon,
   HomeIcon,
-  InboxIcon,
   MenuAlt2Icon,
   UsersIcon,
   XIcon,
 } from "@heroicons/react/outline";
 import { SearchIcon } from "@heroicons/react/solid";
 import { useAuth0 } from "@auth0/auth0-react";
+import MainContainer from "../components/MainContainer/MainContainer";
 
 const navigation = [
-  { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
-  { name: "Team", href: "#", icon: UsersIcon, current: false },
-  { name: "Projects", href: "#", icon: FolderIcon, current: false },
-  { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
-  { name: "Documents", href: "#", icon: InboxIcon, current: false },
-  { name: "Reports", href: "#", icon: ChartBarIcon, current: false },
+  { name: "Dashboard", href: "/", icon: HomeIcon, current: true },
+  { name: "Team", href: "/team", icon: UsersIcon, current: false },
+  { name: "Projects", href: "/projects", icon: FolderIcon, current: false },
+  {
+    name: "Integrations",
+    href: "/integrations",
+    icon: CalendarIcon,
+    current: false,
+  },
 ];
 const userNavigation = [{ name: "Sign out", href: "#" }];
 
@@ -91,9 +94,9 @@ export default function Example() {
               <div className='mt-5 flex-1 h-0 overflow-y-auto'>
                 <nav className='px-2 space-y-1'>
                   {navigation.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
+                    <Link
+                      key={item.href}
+                      to={item.href}
                       className={classNames(
                         item.current
                           ? "bg-indigo-800 text-white"
@@ -106,7 +109,7 @@ export default function Example() {
                         aria-hidden='true'
                       />
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                 </nav>
               </div>
@@ -133,9 +136,9 @@ export default function Example() {
             <div className='mt-5 flex-1 flex flex-col'>
               <nav className='flex-1 px-2 space-y-1'>
                 {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
+                  <Link
+                    key={item.href}
+                    to={item.href}
                     className={classNames(
                       item.current
                         ? "bg-indigo-800 text-white"
@@ -148,7 +151,7 @@ export default function Example() {
                       aria-hidden='true'
                     />
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </nav>
             </div>
@@ -235,22 +238,37 @@ export default function Example() {
             </div>
           </div>
         </div>
-
         <main className='flex-1 relative overflow-y-auto focus:outline-none'>
-          <div className='py-6'>
-            <div className='max-w-7xl mx-auto px-4 sm:px-6 md:px-8'>
-              <h1 className='text-2xl font-semibold text-gray-900'>
-                Dashboard
-              </h1>
-            </div>
-            <div className='max-w-7xl mx-auto px-4 sm:px-6 md:px-8'>
-              {/* Replace with your content */}
-              <div className='py-4'>
-                <div className='border-4 border-dashed border-gray-200 rounded-lg h-96' />
-              </div>
-              {/* /End replace */}
-            </div>
-          </div>
+          <Switch>
+            <Route exact path={"/"}>
+              <MainContainer title='Dashboard'>
+                <div className='py-4'>
+                  <div className='border-4 border-dashed border-gray-200 rounded-lg h-96' />
+                </div>
+              </MainContainer>
+            </Route>
+            <Route path={`/team`}>
+              <MainContainer title='Team'>
+                <div className='py-4'>
+                  <div className='border-4 border-dashed border-gray-200 rounded-lg h-96' />
+                </div>
+              </MainContainer>
+            </Route>
+            <Route path={`/projects`}>
+              <MainContainer title='Projects'>
+                <div className='py-4'>
+                  <div className='border-4 border-dashed border-gray-200 rounded-lg h-96' />
+                </div>
+              </MainContainer>
+            </Route>
+            <Route path={`/integrations`}>
+              <MainContainer title='Integrations'>
+                <div className='py-4'>
+                  <div className='border-4 border-dashed border-gray-200 rounded-lg h-96' />
+                </div>
+              </MainContainer>
+            </Route>
+          </Switch>
         </main>
       </div>
     </div>

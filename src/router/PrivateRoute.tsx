@@ -7,6 +7,7 @@ export default function PrivateRoute({ children, ...rest }: any) {
   const { isAuthenticated, isLoading } = useAuth0();
 
   if (isLoading) return <Loader />;
+
   return (
     <Route
       {...rest}
