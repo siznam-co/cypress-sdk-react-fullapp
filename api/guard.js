@@ -15,8 +15,7 @@ const checkJwt = jwt({
     jwksUri: `https://dev-2gv2td8l.us.auth0.com/.well-known/jwks.json`,
   }),
 
-  // Validate the audience and the issuer.
-  audience: "YOUR_API_IDENTIFIER",
+  audience: "https://sdktest/api",
   issuer: [`https://dev-2gv2td8l.us.auth0.com/`],
   algorithms: ["RS256"],
 });

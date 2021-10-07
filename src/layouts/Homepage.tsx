@@ -13,6 +13,7 @@ import {
 import { SearchIcon } from "@heroicons/react/solid";
 import { useAuth0 } from "@auth0/auth0-react";
 import MainContainer from "../components/MainContainer/MainContainer";
+import SDKView from "../components/SDKView/SDKView";
 
 const navigation = [
   { name: "Dashboard", href: "/", icon: HomeIcon, current: true },
@@ -264,7 +265,9 @@ export default function Example() {
             <Route path={`/integrations`}>
               <MainContainer title='Integrations'>
                 <div className='py-4'>
-                  <div className='border-4 border-dashed border-gray-200 rounded-lg h-96' />
+                  <div className='border-4 border-dashed border-gray-200 rounded-lg h-96'>
+                    <SDKView />
+                  </div>
                 </div>
               </MainContainer>
             </Route>

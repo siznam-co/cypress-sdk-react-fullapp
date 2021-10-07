@@ -10,6 +10,7 @@ ReactDOM.render(
     <Auth0Provider
       domain='dev-2gv2td8l.us.auth0.com'
       clientId='hcI6IHj0B61ApKeDkGbxZSt6FfMHakYc'
+      audience='https://sdktest/api'
       redirectUri={window.location.origin}
     >
       <App />

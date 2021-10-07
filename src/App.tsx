@@ -1,7 +1,7 @@
-import Login from "./views/Login";
+import Login from "./layouts/Login";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Homepage from "./views/Homepage";
+import Homepage from "./layouts/Homepage";
 import PrivateRoute from "./router/PrivateRoute";
 
 export default function App() {
