@@ -13,6 +13,7 @@ import {
 import { SearchIcon } from "@heroicons/react/solid";
 import { useAuth0 } from "@auth0/auth0-react";
 import MainContainer from "../components/MainContainer/MainContainer";
+import SDKView from "../components/SDKView/SDKView";
 import Table from "../components/Table/Table";
 import Projects from "../components/Projects/Projects";
 import Stats from "../components/Stats/Stats";
@@ -286,7 +287,9 @@ export default function Homepage() {
             <Route path={`/integrations`}>
               <MainContainer title='Integrations'>
                 <div className='py-4'>
-                  <div className='h-96 border-4 border-dashed bg-white border-gray-300'></div>
+                  <div className='h-auto'>
+                    <SDKView />
+                  </div>
                 </div>
               </MainContainer>
             </Route>
