@@ -10,10 +10,13 @@ export default function SDKView(): ReactElement {
 
   useEffect(() => {
     const init = async () => {
-      const deploymentId = "964";
+      // we will load this deployment
+      const deploymentId = "";
+
+      // fetch auth token from Auth0
       const token = await getAccessTokenSilently();
 
-      // call API to retrieve info
+      // call API to retrieve integry keys
       const tokenResponse = (await fetch("http://127.0.0.1:1234/integry-keys", {
         method: "GET",
         headers: {
@@ -27,18 +30,26 @@ export default function SDKView(): ReactElement {
 
       const { appKey, hash, userId } = tokenResponse;
 
-      new IntegryJS({
+      const instance = new IntegryJS({
         appKey,
         hash,
         userId,
         deploymentId,
+        // give our tabs some custom names
         userConfig: {
           availableFlowsLabel: "Available Flows",
           myFlowsLabel: "My Integrations",
         },
-      }).init({
+      });
+
+      instance.init({
         containerId: "sdk-container",
-        renderMode: IntegryJS.RenderModes.MODAL,
+        renderMode: IntegryJS.RenderModes.INLINE, // show setup forms inline, other option is 'MODAL'
+      });
+
+      // when integration is created, show our endpoint URL
+      instance.eventEmitter.on("did-save-integration", (res) => {
+        console.log(`The endpoint created is: ${res.callbackUrl}`);
       });
     };
     init();

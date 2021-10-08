@@ -1249,10 +1249,10 @@
   resolved "https://registry.yarnpkg.com/@heroicons/react/-/react-1.0.4.tgz#11847eb2ea5510419d7ada9ff150a33af0ad0863"
   integrity sha512-3kOrTmo8+Z8o6AL0rzN82MOf8J5CuxhRLFhpI8mrn+3OqekA6d5eb1GYO3EYYo1Vn6mYQSMNTzCWbEwUInb0cQ==
 
-"@integry/sdk@^3.0.3":
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/@integry/sdk/-/sdk-3.0.3.tgz#b73d38dd6334a8cea088a7bed9827f8ecff9fd06"
-  integrity sha512-rBnWZPQ0AD4w4huL8rqQuhMztmWh5TzR6vJ/WyPZ5u4I3xS3yEU0FHYXN8jF/7ARddhO6/UMCKIfYFiJwnDuaA==
+"@integry/sdk@^3.0.4":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@integry/sdk/-/sdk-3.0.4.tgz#4e4dee8e0eeaaffb429a1c1aa0cf654bf475e539"
+  integrity sha512-l8SDezq2Mz+Q9WmRna++Bg1yTS0hm43FMGhjDcu97cIO7YDv9RLMyAYmvPezvyzwiQA8/5ijQXsKN6wtDlxj1Q==
   dependencies:
     classnames "^2.3.1"
     fuzzysort "^1.1.4"
