@@ -1,39 +1,27 @@
 const people = [
   {
     name: "Cody Fisher",
-    title: "Product Directives Officer",
+    title: "Chief Executive Officer",
     role: "Owner",
     email: "cody.fisher@example.com",
   },
   {
-    name: "Cody Fisher",
-    title: "Product Directives Officer",
-    role: "Owner",
-    email: "cody.fisher@example.com",
+    name: "Zach Brown",
+    title: "Chief Technical Officer",
+    role: "Admin",
+    email: "zach.brown@example.com",
   },
   {
-    name: "Cody Fisher",
-    title: "Product Directives Officer",
-    role: "Owner",
-    email: "cody.fisher@example.com",
+    name: "Christina Halberg",
+    title: "Integrations Engineer",
+    role: "Member",
+    email: "christina.halberg@example.com",
   },
   {
-    name: "Cody Fisher",
-    title: "Product Directives Officer",
-    role: "Owner",
-    email: "cody.fisher@example.com",
-  },
-  {
-    name: "Cody Fisher",
-    title: "Product Directives Officer",
-    role: "Owner",
-    email: "cody.fisher@example.com",
-  },
-  {
-    name: "Cody Fisher",
-    title: "Product Directives Officer",
-    role: "Owner",
-    email: "cody.fisher@example.com",
+    name: "Martin Short",
+    title: "API Engineer",
+    role: "Member",
+    email: "martin.short@example.com",
   },
 ];
 
@@ -73,9 +61,6 @@ export default function Table() {
                   >
                     Role
                   </th>
-                  <th scope='col' className='relative px-6 py-3'>
-                    <span className='sr-only'>Edit</span>
-                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -96,12 +81,11 @@ export default function Table() {
                     <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>
                       {person.role}
                     </td>
-                    <td className='px-6 py-4 whitespace-nowrap text-right text-sm font-medium'>
-                      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                    {/* <td className='px-6 py-4 whitespace-nowrap text-right text-sm font-medium'>
                       <a className='text-indigo-600 hover:text-indigo-900'>
                         Edit
                       </a>
-                    </td>
+                    </td> */}
                   </tr>
                 ))}
               </tbody>

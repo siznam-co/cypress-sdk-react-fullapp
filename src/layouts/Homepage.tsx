@@ -17,6 +17,7 @@ import SDKView from "../components/SDKView/SDKView";
 import Table from "../components/Table/Table";
 import Projects from "../components/Projects/Projects";
 import Stats from "../components/Stats/Stats";
+import Tasks from "../components/Tasks/Tasks";
 
 const navigation = [
   { name: "Dashboard", href: "/", icon: HomeIcon, current: true },
@@ -70,7 +71,7 @@ export default function Homepage() {
             leaveFrom='translate-x-0'
             leaveTo='-translate-x-full'
           >
-            <div className='relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-blue-600'>
+            <div className='relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-doneday-black'>
               <Transition.Child
                 as={Fragment}
                 enter='ease-in-out duration-300'
@@ -108,7 +109,7 @@ export default function Homepage() {
                       )}
                     >
                       <item.icon
-                        className='mr-4 flex-shrink-0 h-6 w-6 text-blue-300'
+                        className='mr-4 flex-shrink-0 h-6 w-6 text-gray-300'
                         aria-hidden='true'
                       />
                       {item.name}
@@ -125,12 +126,43 @@ export default function Homepage() {
       </Transition.Root>
 
       {/* Static sidebar for desktop */}
-      <div className='hidden bg-blue-600 md:flex md:flex-shrink-0'>
+      <div className='hidden bg-doneday-black md:flex md:flex-shrink-0'>
         <div className='flex flex-col w-64'>
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className='flex flex-col flex-grow pt-5 pb-4 overflow-y-auto'>
             <div className='flex items-center flex-shrink-0 px-4'>
-              <p className='text-white text-2xl font-bold'>Doneday</p>
+              <Link to='/' className='flex items-center'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  version='1.1'
+                  id='Capa_1'
+                  x='0px'
+                  y='0px'
+                  width='48px'
+                  height='28px'
+                  viewBox='0 0 474.8 474.801'
+                >
+                  <g>
+                    <g>
+                      <g>
+                        <path
+                          d='M396.283,257.097c-1.14-0.575-2.282-0.862-3.433-0.862c-2.478,0-4.661,0.951-6.563,2.857l-18.274,18.271    c-1.708,1.715-2.566,3.806-2.566,6.283v72.513c0,12.565-4.463,23.314-13.415,32.264c-8.945,8.945-19.701,13.418-32.264,13.418    H82.226c-12.564,0-23.319-4.473-32.264-13.418c-8.947-8.949-13.418-19.698-13.418-32.264V118.622    c0-12.562,4.471-23.316,13.418-32.264c8.945-8.946,19.7-13.418,32.264-13.418H319.77c4.188,0,8.47,0.571,12.847,1.714    c1.143,0.378,1.999,0.571,2.563,0.571c2.478,0,4.668-0.949,6.57-2.852l13.99-13.99c2.282-2.281,3.142-5.043,2.566-8.276    c-0.571-3.046-2.286-5.236-5.141-6.567c-10.272-4.752-21.412-7.139-33.403-7.139H82.226c-22.65,0-42.018,8.042-58.102,24.126    C8.042,76.613,0,95.978,0,118.629v237.543c0,22.647,8.042,42.014,24.125,58.098c16.084,16.088,35.452,24.13,58.102,24.13h237.541    c22.647,0,42.017-8.042,58.101-24.13c16.085-16.084,24.134-35.45,24.134-58.098v-90.797    C402.001,261.381,400.088,258.623,396.283,257.097z'
+                          data-original='#000000'
+                          data-old_color='#ffffff'
+                          fill='#ffffff'
+                        />
+                        <path
+                          d='M467.95,93.216l-31.409-31.409c-4.568-4.567-9.996-6.851-16.279-6.851c-6.275,0-11.707,2.284-16.271,6.851    L219.265,246.532l-75.084-75.089c-4.569-4.57-9.995-6.851-16.274-6.851c-6.28,0-11.704,2.281-16.274,6.851l-31.405,31.405    c-4.568,4.568-6.854,9.994-6.854,16.277c0,6.28,2.286,11.704,6.854,16.274l122.767,122.767c4.569,4.571,9.995,6.851,16.274,6.851    c6.279,0,11.704-2.279,16.274-6.851l232.404-232.403c4.565-4.567,6.854-9.994,6.854-16.274S472.518,97.783,467.95,93.216z'
+                          data-original='#000000'
+                          data-old_color='#ffffff'
+                          fill='#ffffff'
+                        />
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+                <p className='text-white text-2xl font-bold'>Doneday</p>
+              </Link>
             </div>
             <div className='mt-5 flex-1 flex flex-col'>
               <nav className='flex-1 px-2 space-y-1'>
@@ -140,13 +172,13 @@ export default function Homepage() {
                     to={item.href}
                     className={classNames(
                       pathname === item.href
-                        ? "bg-blue-800 text-white"
-                        : "text-blue-100 hover:bg-blue-600",
+                        ? "bg-gray-700 text-white"
+                        : "text-blue-100 hover:bg-gray-600",
                       "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
                     )}
                   >
                     <item.icon
-                      className='mr-3 flex-shrink-0 h-6 w-6 text-blue-300'
+                      className='mr-3 flex-shrink-0 h-6 w-6 text-gray-300'
                       aria-hidden='true'
                     />
                     {item.name}
@@ -241,8 +273,13 @@ export default function Homepage() {
           <Switch>
             <Route exact path={"/"}>
               <MainContainer title='Dashboard'>
-                <div className='py-4'>
-                  <Stats />
+                <div>
+                  <div className='py-4'>
+                    <Stats />
+                  </div>
+                  <div className='py-4'>
+                    <Tasks />
+                  </div>
                 </div>
               </MainContainer>
             </Route>

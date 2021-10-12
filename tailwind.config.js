@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        "doneday-black": "#212529",
       },
     },
   },

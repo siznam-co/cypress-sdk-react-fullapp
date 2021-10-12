@@ -8,10 +8,10 @@ import {
 const stats = [
   {
     id: 1,
-    name: "Total Subscribers",
-    stat: "71,897",
+    name: "Total Tasks",
+    stat: "97",
     icon: UsersIcon,
-    change: "122",
+    change: "22",
     changeType: "increase",
   },
   {
@@ -24,7 +24,7 @@ const stats = [
   },
   {
     id: 3,
-    name: "Avg. Click Rate",
+    name: "Avg. Close Rate",
     stat: "24.57%",
     icon: CursorClickIcon,
     change: "3.2%",
