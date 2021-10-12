@@ -4,7 +4,6 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "trustpage-blue": "#016AFF",
       },
     },
   },

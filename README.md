@@ -1,46 +1,66 @@
-# Getting Started with Create React App
+# Getting Started with Integry SDK full app example
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The API was bootstrapped by [express-generator](https://expressjs.com/en/starter/generator.html).
 
-## Available Scripts
+## Prerequisites
 
-In the project directory, you can run:
+1. Install the latest LTS version of [NodeJS](https://nodejs.org). Currently that is v14.
+2. After installing Node, open a terminal window and install the `yarn` package manager. You can do that by running `npm install -g yarn` in the terminal.
+3. Make sure you have Git installed. Try running `git` in a terminal. If it is not installed, MacOS will prompt you to install XCode Build Tools which will do the job for you. Otherwise, use the latest version available [here](https://git-scm.com/downloads).
 
-### `yarn start`
+## Setup
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Clone the repository in a directory using the following command. Then, change directory into the project that you just cloned.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```zsh
+# clone app
+git clone https://github.com/osamaaamer95/sdk-react-fullapp
 
-### `yarn test`
+# change to project directory
+cd sdk-react-fullapp
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Install dependencies in the frontend and backend directories. 
 
-### `yarn build`
+- The frontend directory is the root project directory. 
+- The backend directory is the `/api` directory.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```zsh
+# Install frontend dependencits
+yarn install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Install backend dependencies
+cd api
+yarn install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Create a `.env` file in the `/api` directory and copy environment variables to it. These environment variables are the ones shown on the [SDK deployment page](https://app.integry.io/wapp/deployments/v3/sdk/create).
 
-### `yarn eject`
+```zsh
+# Move to API directory if not already there
+cd api
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Copy the env sample file
+cp .env.sample .env
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Now, open the newly copied `.env` file and fill in all three of these values after you create a deployment on the Integry web app.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```env
+INTEGRY_APP_KEY=
+INTEGRY_APP_SECRET=
+INTEGRY_DEPLOYMENT_ID=
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+4. Start the API and frontend in separate terminal instances.
 
-## Learn More
+```zsh
+# In root directory in terminal A
+yarn start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# In api directory in terminal B
+yarn start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. Open [http://localhost:3000](http://localhost:3000) to view the app running in the browser.

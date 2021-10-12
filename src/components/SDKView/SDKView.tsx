@@ -10,9 +10,6 @@ export default function SDKView(): ReactElement {
 
   useEffect(() => {
     const init = async () => {
-      // we will load this deployment
-      const deploymentId = "";
-
       // fetch auth token from Auth0
       const token = await getAccessTokenSilently();
 
@@ -26,9 +23,10 @@ export default function SDKView(): ReactElement {
         appKey: string;
         hash: string;
         userId: string;
+        deploymentId: string;
       };
 
-      const { appKey, hash, userId } = tokenResponse;
+      const { appKey, hash, userId, deploymentId } = tokenResponse;
 
       const instance = new IntegryJS({
         appKey,

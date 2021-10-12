@@ -7,6 +7,7 @@ const checkJwt = require("../guard");
 router.get("/integry-keys", checkJwt, async function (req, res, next) {
   const appKey = process.env.INTEGRY_APP_KEY;
   const appSecret = process.env.INTEGRY_APP_SECRET;
+  const deploymentId = process.env.INTEGRY_DEPLOYMENT_ID;
   const userId = req.user.sub;
 
   const hash = crypto
@@ -18,6 +19,7 @@ router.get("/integry-keys", checkJwt, async function (req, res, next) {
     appKey,
     hash,
     userId,
+    deploymentId,
   });
 });
 
