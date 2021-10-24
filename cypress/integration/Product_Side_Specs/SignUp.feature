@@ -14,8 +14,11 @@ Feature: Sign Up Feature
     Scenario: Verify Invalid fields validations.
     Given the user verify "invalidFields" at the "SignUp" screen.
 
-    Scenario: Verify Already Existing account validation.
-    Given the user verify "alreadyExistingAccount" at the "SignUp" screen.
+    # Enable below scenario only if you have an existing user in this Environment. 
+    # If you have, then provide username and password in Cypress.json > env > username and password
+
+    # Scenario: Verify Already Existing account validation.
+    # Given the user verify "alreadyExistingAccount" at the "SignUp" screen.
 
     Scenario: Sign Up a new user in the Application.
     When the user "createsAccount" at the "SignUp" screen.

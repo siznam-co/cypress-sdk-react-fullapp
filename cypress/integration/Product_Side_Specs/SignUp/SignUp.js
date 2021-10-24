@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps"
-import { performOperation, performOperation, performOperation } from "../../common/helpers"
+import { performOperation } from "../../common/helpers"
 
 const commonLocators = require("../../../Locators/commonLocators.json") 
 const SignUpLocators = require("../../../Locators/SignUpLocators.json")
