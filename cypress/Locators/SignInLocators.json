@@ -1,4 +1,12 @@
 {
     "signInToDoneDayBtn": "button[type='submit']",
-    "signInScreenSignUpBtn": "div.ulp-alternate-action a"
+    "signInScreenSignUpBtn": "div.ulp-alternate-action a",
+    "emailField": "#username",
+    "passwordField": "#password",
+    "submitButton": "button[type='submit']",
+
+    "logout": {
+        "profileAvatarBtn": "[id*='headlessui-menu-button']",
+        "signOutOption": "[id*='headlessui-menu-items'] > a"
+    }
 }

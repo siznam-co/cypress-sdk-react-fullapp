@@ -1,5 +1,6 @@
 {
     "signInToDoneDayScreen": "button[type='submit']",
     "signInScreen": "div.ulp-alternate-action a",
-    "pageHeading": "#root h1"
+    "pageHeading": "#root h1",
+    "menuBtn": "nav > a"
 }
