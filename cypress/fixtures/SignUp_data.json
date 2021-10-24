@@ -1,0 +1,37 @@
+{
+    "createsAccount": {
+        "UNIQUE_Email": "theqa13119+1@gmail.com",
+        "passwordField": "Qaintegry@123"
+    },
+    "blankFields": {
+        "signUpAlternateContainsText": "Already have an account?",
+        "emailField": "test",
+        "passwordField": "a{backspace}"
+    },
+    "invalidFields": {
+        "pwPolicy2by2InvalidColorBefore": "background-color",
+        "password2by2Field": "Q",
+        "pwPolicy2by2ValidColorBefore": "background-color",
+        "pwPolicy2by1InvalidColorBefore": "background-color",
+        "password2by1Field": "Qa",
+        "pwPolicy2by1ValidColorBefore": "background-color",
+        "pwPolicy1by1InvalidColorBefore": "background-color",
+        "password1by1Field": "Qaintegry",
+        "pwPolicy1by1ValidColorBefore": "background-color",
+        "pwPolicy1by2InvalidColorBefore": "background-color",
+        "pwPolicy2by4InvalidColorBefore": "background-color",
+        "password2by4Field": "Qaintegry@",
+        "pwPolicy2by4ValidColorBefore": "background-color",
+        "pwPolicy1by2ValidColorBefore": "background-color",
+        "pwPolicy2by3InvalidColorBefore": "background-color",
+        "password2by3Field": "Qaintegry@123",
+        "pwPolicy2by3ValidColorBefore": "background-color",
+
+        "emailInvalidErrorMsg": "Email is not valid."
+    },
+    "alreadyExistingAccount": {
+        "emailField": "theqa13119+1@gmail.com",
+        "passwordField": "Qaintegry@123",
+        "alreadyExistingAccountMsg": "Something went wrong, please try again later"
+    }
+}

@@ -1,3 +1,47 @@
 {
-    
+    "createsAccount": {
+        "UNIQUE_Email": "#email",
+        "passwordField": "#password",
+        "submitBtn": "button[type='submit']",
+        "acceptPermissionBtn": "button[value='accept']"
+    },
+    "blankFields": {
+        "signUpAlternateContainsText": "div.ulp-alternate-action > p",
+        "submitBtn": "button[type='submit']",    
+        "emailFieldIsFocused": "#email",
+        "emailField": "#email",
+        "submit2Btn": "button[type='submit']",    
+        "passwordFieldIsFocused": "#password",
+        "passwordField": "#password"
+    },
+    "invalidFields": {
+        "pwPolicy2by2InvalidColorBefore": "form ul ul ul li:nth-child(2)",
+        "password2by2Field": "#password",
+        "pwPolicy2by2ValidColorBefore": "form ul ul ul li:nth-child(2)",
+        "pwPolicy2by1InvalidColorBefore": "form ul ul ul li:nth-child(1)",
+        "password2by1Field": "#password",
+        "pwPolicy2by1ValidColorBefore": "form ul ul ul li:nth-child(1)",
+        "pwPolicy1by1InvalidColorBefore": "li[data-error-code='password-policy-length-at-least']",
+        "password1by1Field": "#password",
+        "pwPolicy1by1ValidColorBefore": "li[data-error-code='password-policy-length-at-least']",
+        "pwPolicy1by2InvalidColorBefore": "li[data-error-code='password-policy-contains-at-least']",
+        "pwPolicy2by4InvalidColorBefore": "form ul ul ul li:nth-child(4)",
+        "password2by4Field": "#password",
+        "pwPolicy2by4ValidColorBefore": "form ul ul ul li:nth-child(4)",
+        "pwPolicy2by3InvalidColorBefore": "form ul ul ul li:nth-child(3)",
+        "password2by3Field": "#password",
+        "pwPolicy2by3ValidColorBefore": "form ul ul ul li:nth-child(3)",
+
+        "submitBtn": "button[type='submit']",    
+        "emailInvalidBeVisible": "#error-element-email",
+        "emailInvalidErrorMsg": "#error-element-email"
+    },
+    "alreadyExistingAccount": {
+        "emailField": "#email",
+        "passwordField": "#password",
+        "alreadyExistingAccountBannerNotInDOM": "#prompt-alert p",
+        "submitBtn": "button[type='submit']",
+        "alreadyExistingAccountBannerBeVisible": "#prompt-alert p",
+        "alreadyExistingAccountMsg": "#prompt-alert p"
+    }
 }

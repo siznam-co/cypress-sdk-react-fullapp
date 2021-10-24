@@ -1,3 +1,4 @@
 {
-    
+    "signInToDoneDayBtn": "button[type='submit']",
+    "signInScreenSignUpBtn": "div.ulp-alternate-action a"
 }
