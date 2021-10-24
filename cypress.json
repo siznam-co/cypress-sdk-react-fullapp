@@ -5,7 +5,7 @@
   "pageLoadTimeout": 60000,
   "video": false,
   "videoUploadOnPasses": false,
-  "chromeWebSecurity": true,
+  "chromeWebSecurity": false,
   "reporter": "mochawesome",
   "reporterOptions": {
     "reportDir": "results",
