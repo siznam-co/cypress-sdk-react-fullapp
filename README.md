@@ -2,6 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 The API was bootstrapped by [express-generator](https://expressjs.com/en/starter/generator.html).
+Please navigate to "Cypress Tests" section below to set up the Cypress Test framework properly.
 
 ## Prerequisites
 
@@ -64,3 +65,19 @@ yarn start
 ```
 
 5. Open [http://localhost:3000](http://localhost:3000) to view the app running in the browser.
+
+
+
+# Cypress Tests
+
+1. In sdk-react-fullapp directory hit following commands. 
+
+<!-- To Install Node modules -->
+npm i
+npm run cypress:open
+<!-- The above command will run cypress runner, where you can run all test specs. -->
+<!-- If above command don't run, then start with installing the cypress -->
+npm install cypress --save--dev
+
+2. In Cypress.json file, there is a "baseUrl", you can change it to your desired environment. 
+3. In Cypress.json file, there a "env" object, you can change these credentials to one you required (Must be a valid user). Otherwise, the existings are valid for local env. 
