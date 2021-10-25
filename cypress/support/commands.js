@@ -26,7 +26,7 @@ Cypress.Commands.add("loginWithApi", (username, password) => {
         url: "/api/auth/login",
         headers: {
             "Host": Cypress.config().baseUrl().split("//")[1],
-            "Connection": "keep-alive",
+            "connection": "keep-alive",
             "Accept": "application/json, text/plain, */*",
             // "Authorization": "Bearer undefined",
             "Origin": "/",
@@ -49,26 +49,48 @@ Cypress.Commands.add("loginWithApi", (username, password) => {
     })
 })
 
-Cypress.Commands.add("loginWithUI", (username, password) => {
+Cypress.Commands.add("loginWithUI", (username, password, page) => {
     cy.visit("/login")
     // Check if the user is on the login page. 
     cy.get(SignInLocators.signInToDoneDayBtn).should("be.visible")
     cy.get(SignInLocators.signInToDoneDayBtn).click()
 
-    // Enter credentials and log in.
-    cy.get(SignInLocators.emailField).type(username)
-    cy.get(SignInLocators.passwordField).type(password)
-
-    cy.get(SignInLocators.submitButton).click()
+    // Check to see if the user is already logged in.
+    cy.get(commonLocators.pageHeading).invoke("text").then(pageHeader => {
+    
+        if (pageHeader == "Dashboard") {
+            cy.log("The user is already logged in.")
+            if (page == "Sign up") {
+                cy.logoutWithUI()
+            }  
+        } else {
+            if (page != "Sign up") {
+                // Enter credentials and log in.
+                cy.get(SignInLocators.emailField).type(username)
+                cy.get(SignInLocators.passwordField).type(password)
+            
+                cy.get(SignInLocators.submitButton).click()
+            }
+        }
+    })
+    
 })
 
 Cypress.Commands.add("logoutWithUI", () => {
-    cy.get(SignInLocators.logout.profileAvatarBtn).click()
-    cy.get(SignInLocators.logout.signOutOption).click()
+    cy.get(SignInLocators.logout.profileAvatarBtn).click({force: true})
+    cy.get(SignInLocators.logout.signOutOption).click({force: true})
     cy.get(SignInLocators.signInToDoneDayBtn).should("be.visible")
 })
 
 Cypress.Commands.add("runRoutes", () => {
 
-    cy.intercept("GET", "https://app.integry.io/bundle/*").as("getBundle") 
+    cy.intercept("GET", "http://127.0.0.1:1234/integry-keys").as("getIntegryKeys") 
+    cy.intercept("GET", "https://app.integry.io/bundle/1072/", {
+        statusCode: 200,
+        body : {
+            "app_key": "bc0f52d8-b784-448a-a475-dce6359a32de",
+            "hash": "98cb2f5ea9c644b1c2a983def6c79c94c020daf6b22b86dd26d34ab7e0f4fe98",
+            "user_id": "auth0|6175551f06721e0069124069"
+        },
+      }).as("getBundle")
 })

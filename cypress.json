@@ -1,5 +1,5 @@
 {
-  "baseUrl": "http://localhost:3000/",
+  "baseUrl": "http://localhost:3000",
   "defaultCommandTimeout": 20000,
   "requestTimeout": 21000,
   "pageLoadTimeout": 60000,
@@ -27,8 +27,8 @@
     "*.md"
   ],
   "env": {
-    "Username": "",
-    "Password": ""
+    "Username": "theqa13119+1@gmail.com",
+    "Password": "Qaintegry@123"
   },
   "projectId": "24jzhx"
 }

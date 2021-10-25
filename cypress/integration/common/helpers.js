@@ -6,6 +6,7 @@ import "cypress-file-upload"
 const commonLocators = require("../../Locators/commonLocators.json")
 const SignUpLocators = require("../../Locators/SignUpLocators.json")
 const SignInLocators = require("../../Locators/SignInLocators.json")
+const IntegrationsLocators = require("../../Locators/IntegrationsLocators.json")
 
 const modifierKey = Cypress.platform === "darwin" ? "meta" : "ctrl"
 
@@ -15,6 +16,8 @@ function getLocators(fieldsType) {
             return SignUpLocators
         case "SignIn":
             return SignInLocators
+        case "Integrations": 
+            return IntegrationsLocators
         default:
             return commonLocators
     }

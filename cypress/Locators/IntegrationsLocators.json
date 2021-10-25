@@ -1,0 +1,9 @@
+{
+    "openAndClosePopup": {
+        "githubCardBtn": "div.integry-container__flow-card:nth-child(1)",
+        "popupCloseBeVisible": "div[class*='styles-module_close']",
+        "addGithubAccountBeVisible": ".integry-container__auth-selector button[class*='integry-container__button']",
+        "popupCloseBtn": "div[class*='styles-module_close']",
+        "githubCardBeVisible": "div.integry-container__flow-card:nth-child(1)"
+    }
+}
