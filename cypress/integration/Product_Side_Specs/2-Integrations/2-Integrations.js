@@ -10,35 +10,7 @@ When("the user hits {string} button.", (btn) => {
 })
 
 Then("the SDK should be loaded successfully.", () => {
-    cy.wait("@getIntegryKeys").its("response.statusCode").should("eq", 200)
-
-    // cy.wait("@getBundle")
-
-    // cy.request({
-    //     method: "GET",
-    //     url: "https://app.integry.io/bundle/1072/",
-    //     headers: {
-    //         "authority": "app.integry.io",
-    //         "connection": "keep-alive",
-    //         "accept": "*/*",
-    //         // "Authorization": "Bearer undefined",
-    //         "origin": "/",
-    //         "referer": "/",
-    //     },
-    //     body : {
-    //         "app_key": "bc0f52d8-b784-448a-a475-dce6359a32de",
-    //         "hash": "98cb2f5ea9c644b1c2a983def6c79c94c020daf6b22b86dd26d34ab7e0f4fe98",
-    //         "user_id": "auth0|6175551f06721e0069124069"
-    //     }
-    // }).then((response) => {
-    //     expect(response.status).equal(200)
-    //     // Storing user Data in Cache
-    //     // cy.window().then((window) => {
-    //     //     window.localStorage.setItem("profile", JSON.stringify(response.body))
-    //     //     cy.log("The user logged in successfully")
-    //     //     cy.visit("/login")
-    //     // })
-    // })
+    cy.wait("@getBundle").its("response.statusCode").should("eq", 200)
 })
 
 When("the user {string} at the {string} screen.", (operation, fieldsType) => {

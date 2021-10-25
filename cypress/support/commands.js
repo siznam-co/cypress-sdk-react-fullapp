@@ -85,12 +85,5 @@ Cypress.Commands.add("logoutWithUI", () => {
 Cypress.Commands.add("runRoutes", () => {
 
     cy.intercept("GET", "http://127.0.0.1:1234/integry-keys").as("getIntegryKeys") 
-    cy.intercept("GET", "https://app.integry.io/bundle/1072/", {
-        statusCode: 200,
-        body : {
-            "app_key": "bc0f52d8-b784-448a-a475-dce6359a32de",
-            "hash": "98cb2f5ea9c644b1c2a983def6c79c94c020daf6b22b86dd26d34ab7e0f4fe98",
-            "user_id": "auth0|6175551f06721e0069124069"
-        },
-      }).as("getBundle")
+    cy.intercept("GET", "https://app.integry.io/bundle/1072/*").as("getBundle")
 })
