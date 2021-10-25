@@ -73,11 +73,13 @@ yarn start
 1. In sdk-react-fullapp directory hit following commands. 
 
 <!-- To Install Node modules -->
-npm i
+```npm i
 npm run cypress:open
+```
 <!-- The above command will run cypress runner, where you can run all test specs. -->
 <!-- If above command don't run, then start with installing the cypress -->
-npm install cypress --save--dev
+```npm install cypress --save--dev
+```
 
 2. In Cypress.json file, there is a "baseUrl", you can change it to your desired environment. 
 3. In Cypress.json file, there a "env" object, you can change these credentials to one you required (Must be a valid user). Otherwise, the existings are valid for local env. 
